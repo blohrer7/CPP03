@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blohrer <blohrer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/07 10:01:51 by blohrer           #+#    #+#             */
+/*   Updated: 2025/12/07 10:01:52 by blohrer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
 	: ClapTrap("default") // Basisklasse initialisieren
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap default constructor is called" << std::endl;
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
@@ -13,7 +25,7 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(std::string name)
 	: ClapTrap(name)
 {
-	std::cout << "ScavTrap a new champion is born " << this->name << std::endl;
+	std::cout << "ScavTrap a new champion created " << this->name << std::endl;
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
@@ -22,7 +34,7 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(const ScavTrap& other)
 	: ClapTrap(other)
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor is called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
@@ -32,7 +44,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	std::cout << "copy assignment operator called" << std::endl;
+	std::cout << "copy assignment operator is called" << std::endl;
 	if(this != &other)
 	{
 		this->name = other.name;
