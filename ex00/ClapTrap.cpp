@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blohrer <blohrer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/07 09:03:02 by blohrer           #+#    #+#             */
+/*   Updated: 2025/12/07 09:03:03 by blohrer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ClapTrap.hpp"
 
@@ -71,16 +83,22 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 		hitPoints -= amount;
-	std::cout << "ClapTrap " << this->name << " has " << hitPoints << " hitpoints " << "left" << std::endl;
+	// std::cout << "ClapTrap " << this->name << " has " << hitPoints << " hitpoints " << "left" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->name << " have " << hitPoints << " hitpoints" << std::endl;
+	if(this->energyPoints == 0 || this->hitPoints == 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is dead and cant be repaired!" << std::endl;
+		return;
+	}
+	// std::cout << "ClapTrap " << this->name << " have " << hitPoints << " hitpoints" << std::endl;
 	std::cout << "ClapTrap " << this->name << " repaired itself " << amount << " points" << std::endl;
-	std::cout << "ClapTrap " << this->name << " have " << energyPoints << " energypoints "  <<std::endl;
+	// std::cout << "ClapTrap " << this->name << " have " << energyPoints << " energypoints "  <<std::endl;
+
 	energyPoints--;
-	std::cout << "ClapTrap " << this->name << " have now " << energyPoints << " energypoints "  <<std::endl;
+	// std::cout << "ClapTrap " << this->name << " have now " << energyPoints << " energypoints "  <<std::endl;
 	hitPoints += amount;
-	std::cout << "ClapTrap " << this->name << " have now " << hitPoints << " hitpoints" <<std::endl;
+	// std::cout << "ClapTrap " << this->name << " have now " << hitPoints << " hitpoints" <<std::endl;
 }
