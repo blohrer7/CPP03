@@ -73,6 +73,12 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (hitPoints == 0)
+    {
+        std::cout << "ClapTrap " << this->name 
+                  << " is already dead and can't take more damage!" << std::endl;
+        return;
+    }
 	std::cout << "ClapTrap " << this->name << " takes " << amount << " damage" << std::endl;
 	if(amount >= hitPoints)
 	{

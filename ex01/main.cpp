@@ -20,10 +20,10 @@ int main(void)
 	ClapTrap clap("Bob");
 	ScavTrap scav("Jonny");
 
-	clap.attack("Hulk");
+	clap.attack("Bob");
 	scav.takeDamage(5);
 	std::cout << std::endl;
-	scav.attack("Thor");
+	scav.attack("Jonny");
 	clap.takeDamage(20);
 	clap.beRepaired(5);
 	scav.beRepaired(5);

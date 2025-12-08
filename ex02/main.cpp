@@ -22,17 +22,17 @@ int main(void)
 	ScavTrap scav("Jonny");
 	FragTrap frag("Spiderman");
 
-	clap.attack("Hulk");
+	clap.attack("Bob");
 	scav.takeDamage(5);
 	std::cout << std::endl;
 
-	scav.attack("Thor");
+	scav.attack("Jonny");
 	clap.takeDamage(20);
 	clap.beRepaired(5);
 	scav.beRepaired(5);
 	std::cout << std::endl;
 
-	frag.attack("Jonny");
+	frag.attack("Spiderman");
 	scav.takeDamage(10);
 	scav.guardGate();
 
